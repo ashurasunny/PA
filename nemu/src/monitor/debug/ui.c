@@ -129,6 +129,8 @@ static int cmd_info(char *args)
                 printf("%s\t0x%x\t0x%x\n",regsl[i],cpu.gpr[i]._32,cpu.gpr[i]._32);
         }
         printf("eip\t0x%x\t0x%x\n ",cpu.eip,cpu.eip);
+        printf("eflags\t0x%x\t0x%x\n",cpu.EFLAGS.val,cpu.EFLAGS.val);
+
     }
     else if('w' == *args)
     {
