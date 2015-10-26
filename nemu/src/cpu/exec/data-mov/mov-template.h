@@ -3,7 +3,7 @@
 #define instr mov
 
 static void do_execute() {
-	OPERAND_W(op_dest, op_src->val);
+	OPERAND_W(op_dest, op_src->val);//#define OPERAND_W(op, src) concat(write_operand_, SUFFIX) (op, src)
 	print_asm_template2();
 }
 
