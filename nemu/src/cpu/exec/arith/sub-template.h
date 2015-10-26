@@ -14,7 +14,10 @@ static void do_execute () {
     cpu.EFLAGS.ZF = (result == 0);
     cpu.EFLAGS.CF = result > dest_val;
     cpu.EFLAGS.OF = (src&(!dst)&(!rst)) || ((!src)&dst&rst);
-    cpu.EFLAGS.SF = (signed)result < 0 ? 1 : 0;
+  //  cpu.EFLAGS.SF = (signed)result < 0 ? 1 : 0;
+    if((signed)result > 0)
+        cpu.EFLAGS.SF = 0;
+    else cpu.EFLAGS.SF = 1;
     cpu.EFLAGS.AF = 0;
     uint8_t plowerbyte = result & 0xff;
     cpu.EFLAGS.PF = (plowerbyte&00000001)^((plowerbyte&00000010)>>1)^((plowerbyte&00000100)>>2)^((plowerbyte&00001000)>>3)^((plowerbyte&00010000)>>4)^((plowerbyte&00100000)>>5)^((plowerbyte&01000000)>>6)^((plowerbyte&10000000)>>7);
