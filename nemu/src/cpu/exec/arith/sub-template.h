@@ -16,9 +16,10 @@ static void do_execute () {
     cpu.EFLAGS.OF = (src&(!dst)&(!rst)) || ((!src)&dst&rst);
     cpu.EFLAGS.SF = (signed)result < 0 ? 1 : 0;
     cpu.EFLAGS.AF = 0;
-    uint8_t plowerbyte = cpu.EFLAGS.PF & 0xff;
+//    uint8_t plowerbyte = cpu.EFLAGS.PF & 0xff;
   //  cpu.EFLAGS.PF = (result|result>>1|result>>2|result>>3|result>>4|result>>5|result>>6|result>>7)&0x1;
-    cpu.EFLAGS.PF = (plowerbyte&00000001)^((plowerbyte&00000010)>>1)^((plowerbyte&00000100)>>2)^((plowerbyte&00001000)>>3)^((plowerbyte&00010000)>>4)^((plowerbyte&00100000)>>5)^((plowerbyte&01000000)>>6)^((plowerbyte&10000000)>>7);
+  //  cpu.EFLAGS.PF = (plowerbyte&00000001)^((plowerbyte&00000010)>>1)^((plowerbyte&00000100)>>2)^((plowerbyte&00001000)>>3)^((plowerbyte&00010000)>>4)^((plowerbyte&00100000)>>5)^((plowerbyte&01000000)>>6)^((plowerbyte&10000000)>>7);
+   cpu.EFLAGS.PF = 1;
    // panic("please implement me");
 
     print_asm_template2();
