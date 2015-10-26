@@ -130,7 +130,7 @@ static int cmd_info(char *args)
         }
         printf("eip\t0x%x\t0x%x\n ",cpu.eip,cpu.eip);
         printf("eflags\t0x%x\t0x%x\n",cpu.EFLAGS.val,cpu.EFLAGS.val);
-//        printf("ZF:%x CF:%b OF:%b  SF:%b AF:%b PF:%b"cpu.EFLAGS.ZF,cpu.EFLAGS.CF,cpu.EFLAGS.OF,cpu.EFLAGS.SF,cpu.EFLAGS.AF,cpu.EFLAGS.PF);
+        printf("ZF:%d CF:%d OF:%d  SF:%d AF:%d PF:%d",cpu.EFLAGS.ZF,cpu.EFLAGS.CF,cpu.EFLAGS.OF,cpu.EFLAGS.SF,cpu.EFLAGS.AF,cpu.EFLAGS.PF);
     }
     else if('w' == *args)
     {
