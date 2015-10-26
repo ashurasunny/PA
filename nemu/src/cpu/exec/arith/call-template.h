@@ -6,11 +6,11 @@
 static void do_execute () {
    if(2 == DATA_BYTE)
     {
-       // cpu.esp-=2;
-    //    MEM_W(cpu.esp,cpu.eip);
-       // cpu.eip = (cpu.eip+op_src->val)&0x0000ffff;
+        cpu.esp-=2;
+        MEM_W(cpu.esp,cpu.eip);
+        cpu.eip = (cpu.eip+op_src->val)&0x0000ffff;
     }
- if(4 == DATA_BYTE)
+ else if(4 == DATA_BYTE)
     {
         cpu.esp-=4;
       MEM_W(cpu.esp,cpu.eip);
