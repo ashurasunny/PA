@@ -4,6 +4,8 @@
 #define instr call
 
 static void do_execute () {
+    if(2 == DATA_BYTE)
+
     if(4 == DATA_BYTE)
     {
         cpu.esp-=4;
