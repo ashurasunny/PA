@@ -12,7 +12,6 @@ static void do_execute () {
     rst = (signed) result < 0 ? 1 : 0;
     /* TODO: Update cpu.EFLAGS. */
     cpu.EFLAGS.ZF = (result == 0);
-    printf("zf%d",cpu.EFLAGS.ZF);
     cpu.EFLAGS.CF = result > dest_val;
     cpu.EFLAGS.OF = (src&(!dst)&(!rst)) || ((!src)&dst&rst);
   //  cpu.EFLAGS.SF = (signed)result < 0 ? 1 : 0;
