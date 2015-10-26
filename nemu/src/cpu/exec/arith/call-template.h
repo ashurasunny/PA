@@ -6,13 +6,13 @@
 static void do_execute () {
    if(2 == DATA_BYTE)
     {
-        cpu.esp-=2;
+        cpu.esp-=2;printf("%d",cpu.esp);
         MEM_W(cpu.esp,cpu.eip);
         cpu.eip = (cpu.eip+op_src->val)&0x0000ffff;
     }
  else if(4 == DATA_BYTE)
     {
-        cpu.esp-=4;
+        cpu.esp-=4;printf("%d",cpu.esp);
       MEM_W(cpu.esp,cpu.eip);
         cpu.eip += op_src->val;
     }
