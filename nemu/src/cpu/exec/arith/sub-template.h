@@ -18,7 +18,7 @@ static void do_execute () {
     cpu.EFLAGS.AF = 0;
     cpu.EFLAGS.PF = (result|result>>1|result>>2|result>>3|result>>4|result>>5|result>>6|result>>7)&0x1;
 
-    panic("please implement me");
+   // panic("please implement me");
 
     print_asm_template2();
 }
