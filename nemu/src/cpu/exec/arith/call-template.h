@@ -6,7 +6,6 @@
 static void do_execute () {
     cpu.esp -= 4;
     MEM_W(cpu.esp,cpu.eip);
-
     #if DATA_BYTE == 1
          cpu.eip = (cpu.eip + op_src->val)&0x0000ffff;
     #else
