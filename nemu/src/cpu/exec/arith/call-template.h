@@ -4,6 +4,13 @@
 #define instr call
 
 static void do_execute () {
+    if(4 == DATA_BYTE)
+    {
+        cpu.esp-=4;
+        MEM_W(cpu.esp,cpu.eip);
+        cpu.eip += op_src->val;
+    }
+    /**
     cpu.esp -= 4;
     MEM_W(cpu.esp,cpu.eip);
     #if DATA_BYTE == 1
@@ -11,11 +18,11 @@ static void do_execute () {
     #else
          cpu.eip += op_src->val;
     #endif // DATA_BYTE
-	print_asm_template1();
+	print_asm_template1();**/
 }
 
 make_instr_helper(i)
-make_instr_helper(rm)
+//make_instr_helper(rm)
 
 #include "cpu/exec/template-end.h"
 
