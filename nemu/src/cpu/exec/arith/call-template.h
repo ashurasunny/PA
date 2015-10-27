@@ -24,6 +24,7 @@ static void do_execute () {
          cpu.eip += op_src->val;
     #endif // DATA_BYTE
 	print_asm_template1();****/
+	print_asm_template1();
 }
 
 make_instr_helper(i)
